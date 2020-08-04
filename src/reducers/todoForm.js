@@ -1,11 +1,10 @@
 
-
-const todoFrom=(state=[],action)=>{
+const todoForm =(state=[],action)=>{
     switch (action.type) {
-        case 'ADD_TODO':
-            return [...state,action.text]
+        case 'TODO_FROM':
+            return action.value
         default:
             return state;
     }
 }
-export default todoFrom;
+export default todoForm;
