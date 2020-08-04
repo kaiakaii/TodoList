@@ -15,10 +15,15 @@ export  function updateTodo(id) {
     }
 }
 
-
 export  function deleteTodo(id) {
     return {
         type:"DELETE_TODO",
         id
+    }
+}
+
+export  function getCompletedTodo() {
+    return {
+        type:"COMPLETED_TODO"
     }
 }

@@ -13,7 +13,7 @@ class Todo extends React.Component {
         console.log(this.state.text)
         return (
             <div className="todo_item">
-                <li onClick={this.hasDoneToDo}>{this.state.text}</li>
+                <li style={{textDecoration:this.props.todo.completed?"line-through":"none"}} onClick={this.hasDoneToDo}>{this.state.text}</li>
                 <button onClick={this.deleteToDo} className="todo_delete">x</button>
             </div>
 
