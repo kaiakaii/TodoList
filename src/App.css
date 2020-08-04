@@ -37,10 +37,16 @@
   border: 1px solid #666;
   border-radius: 8px;
 }
-
+/*.todo_item li{*/
+  /*text-decoration: blue line-through;*/
+/*}*/
 .todo_container {
   width: 700px;
   margin: 60px auto;
+}
+
+.todo_delete {
+  color: red;
 }
 
 .todo_input {
