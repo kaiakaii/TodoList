@@ -27,3 +27,5 @@ class TodoForm extends React.Component {
         event.preventDefault();
     }
 }
+
+export default TodoForm;
