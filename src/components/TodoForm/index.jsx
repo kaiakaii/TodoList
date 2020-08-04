@@ -18,6 +18,7 @@ class TodoForm extends React.Component {
     }
 
     handleChange = event =>{
+        console.log(this.state.text)
         this.setState({
             text:event.target.value
         })
@@ -25,6 +26,7 @@ class TodoForm extends React.Component {
 
     handleSubmit = event =>{
         event.preventDefault();
+        this.props.addTodo(this.state.text)
     }
 }
 
