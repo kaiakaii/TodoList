@@ -10,7 +10,11 @@ class TodoList extends React.Component {
 
             <React.Fragment>
                 <div>
-                {this.props.todoList.map((todo, index) => <Todo updateTodo={this.props.updateTodo} key={index} todo={todo} />
+                {this.props.todoList.map((todo) =>
+                    <Todo
+                    updateTodo={this.props.updateTodo}
+                    deleteTodo={this.props.deleteTodo}
+                    key={todo.id} todo={todo} />
                 )}
                 </div>
             </React.Fragment>

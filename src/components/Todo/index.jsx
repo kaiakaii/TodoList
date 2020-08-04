@@ -14,7 +14,7 @@ class Todo extends React.Component {
         return (
             <div className="todo_item">
                 <li onClick={this.hasDoneToDo}>{this.state.text}</li>
-                <span onClick={this.deleteToDo} className="todo_delete">x</span>
+                <button onClick={this.deleteToDo} className="todo_delete">x</button>
             </div>
 
         )
@@ -23,7 +23,6 @@ class Todo extends React.Component {
 
 
     hasDoneToDo = event => {
-        console.log(this.props.todo.id);
         if (event.target.style.textDecoration === "line-through") {
             event.target.style.textDecoration = "none";
         } else {
@@ -33,6 +32,7 @@ class Todo extends React.Component {
     };
 
     deleteToDo = event => {
+        this.props.deleteTodo(this.props.todo.id)
 
     }
 }
