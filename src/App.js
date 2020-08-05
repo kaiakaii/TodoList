@@ -3,7 +3,7 @@ import './App.css';
 import TodoFormContainer from "./containers/TodoFormContainer";
 import TodoListContainer from "./containers/TodoListContainer";
 import {HashRouter as Router, Route,Link} from "react-router-dom";
-import CompletedTodoList from "./components/CompletedTodoList";
+import CompletedTodoLContainer from "./containers/CompletedTodo";
 
 function App() {
     return (
@@ -12,13 +12,13 @@ function App() {
                 <div>
                     <Router>
                         <Link to="/completedTodoList">CompletedTodoList</Link>
-                        <Route path="/completedTodoList" component={CompletedTodoList}></Route>
                         <br/>
-                        <Link to="/todoList">TodoList</Link>
-                        <Route path="/todoList" component={TodoListContainer}></Route>
+                        <Link to="/">TodoList</Link>
+                        <Route exact path="/completedTodoList" component={CompletedTodoLContainer}></Route>
+                        <Route exact path="/" component={TodoListContainer}></Route>
                     </Router>
 
-                    <TodoListContainer/>
+                    
                     <TodoFormContainer/>
                 </div>
             </header>
