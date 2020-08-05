@@ -1,24 +1,9 @@
 import axios from 'axios'
-const basicUrl = "https://5e9ec500fb467500166c4658.mockapi.io/todos";
+const basicUrl = "https://5e9ec500fb467500166c4658.mockapi.io/";
 
-const getTodos = () => axios.get(basicUrl).then(response => response.data)
-const addTodo = () =>{
-    axios.post(basicUrl)
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-}
-const updateTodo = () =>{
-    axios.get(basicUrl)
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-}
+const getTodos = () => axios.get(basicUrl+"todos").then(response => response.data)
+const postTodo = (todo) => axios.post(basicUrl+"todos",todo)
+const updateTodo = (id) => axios.put(basicUrl+"todos/"+id)
+const deleteTodo = (id) => axios.delete(basicUrl+"todos/"+id)
 
-export {getTodos,addTodo,updateTodo}
+export {getTodos,postTodo,updateTodo,deleteTodo}

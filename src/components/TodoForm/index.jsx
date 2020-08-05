@@ -1,32 +1,40 @@
 import React from 'react';
-import {addTodo} from '../../API'
+import {postTodo} from '../../API'
 class TodoForm extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {text:''}
+        this.state = {content:''}
     }
 
     render() {
         return (
 
             <form onSubmit={this.handleSubmit}>
-                <input type="text" value={this.state.text} onChange={this.handleChange}/>
+                <input type="text" value={this.state.content} onChange={this.handleChange}/>
                 <input type="submit" value="Add"/>
             </form>
         )
     }
 
     handleChange = event =>{
-        console.log(this.state.text)
         this.setState({
-            text:event.target.value
+            content:event.target.value
         })
     }
 
     handleSubmit = event =>{
         event.preventDefault();
-        this.props.addTodo(this.state.text)
+        let todo = {
+            content: this.state.content
+        }
+        postTodo(todo).then(response=>{
+            console.log(response)
+                this.props.addTodo([response.data])
+            }
+            
+        )
+        
     }
 }
 

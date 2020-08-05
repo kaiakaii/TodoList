@@ -5,7 +5,7 @@ import {getCompletedTodo} from "../../actions";
 const mapStateToProps = (state) => {
    console.log(state)
    return  {
-        completedTodo: state.todoList.filter(todo => todo.completed)
+        completedTodo: state.todoList.filter(todo => todo.status)
     }
     
 };

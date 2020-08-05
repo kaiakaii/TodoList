@@ -8,7 +8,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispacth) => ({
     updateTodo:(id) => dispacth(updateTodo(id)),
     deleteTodo:(id) => dispacth(deleteTodo(id)),
-    addTodo: (text) => dispacth(addTodo(text))
+    addTodo: (content) => dispacth(addTodo(content))
 });
 const TodoListContainer = connect(mapStateToProps,mapDispatchToProps)(TodoList);
 

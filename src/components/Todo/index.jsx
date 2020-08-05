@@ -6,14 +6,14 @@ class Todo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            text: this.props.todo.content
+            content: this.props.todo.content
         }
     }
     render() {
-        console.log(this.state.text)
+        console.log(this.state.content)
         return (
             <div className="todo_item">
-                <li style={{textDecoration:this.props.todo.completed?"line-through":"none"}} onClick={this.hasDoneToDo}>{this.state.text}</li>
+                <li style={{textDecoration:this.props.todo.status?"line-through":"none"}} onClick={this.hasDoneToDo}>{this.state.content}</li>
                 <button onClick={this.deleteToDo} className="todo_delete">x</button>
             </div>
 

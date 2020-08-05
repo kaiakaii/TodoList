@@ -1,10 +1,10 @@
 let _id = 0;
 
-export  function addTodo(text) {
+export  function addTodo(content) {
     return {
         type:"ADD_TODO",
         id:_id++,
-        text
+        content
     }
 }
 
