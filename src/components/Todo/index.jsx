@@ -1,7 +1,9 @@
 import React from "react";
 import './../../App.css';
 import {putTodo,delTodo} from '../../API'
-
+import { Timeline,Space } from 'antd';
+import { CloseOutlined } from '@ant-design/icons'
+import 'antd/dist/antd.css'
 class Todo extends React.Component {
 
     constructor(props) {
@@ -13,9 +15,14 @@ class Todo extends React.Component {
     render() {
         console.log(this.state.content)
         return (
-            <div className="todo_item">
-                <li style={{textDecoration:this.props.todo.status?"line-through":"none"}} onClick={this.hasDoneToDo}>{this.state.content}</li>
-                <button onClick={this.deleteToDo} className="todo_delete">x</button>
+            <div >
+                {/* className="todo_item" */}
+                {/* <li style={{textDecoration:this.props.todo.status?"line-through":"none"}} onClick={this.hasDoneToDo}>{this.state.content}</li> */}
+                <Timeline> 
+                    <Space><Timeline.Item style={{textDecoration:this.props.todo.status?"line-through":"none"}} onClick={this.hasDoneToDo}>{this.state.content}<CloseOutlined onClick={this.deleteToDo} /></Timeline.Item></Space>
+                    
+                </Timeline>
+                {/* <button onClick={this.deleteToDo} className="todo_delete">x</button> */}
             </div>
 
         )

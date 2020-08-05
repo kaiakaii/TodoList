@@ -17,8 +17,6 @@ function App() {
                         <Route exact path="/completedTodoList" component={CompletedTodoLContainer}></Route>
                         <Route exact path="/" component={TodoListContainer}></Route>
                     </Router>
-
-                    
                     <TodoFormContainer/>
                 </div>
             </header>
