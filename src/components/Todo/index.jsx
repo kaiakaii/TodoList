@@ -1,5 +1,6 @@
 import React from "react";
 import './../../App.css';
+import {putTodo,delTodo} from '../../API'
 
 class Todo extends React.Component {
 
@@ -28,11 +29,17 @@ class Todo extends React.Component {
         } else {
             event.target.style.textDecoration = "line-through"
         }
-        this.props.updateTodo(this.props.todo.id)
+        let updateId = this.props.todo.id
+        putTodo(updateId).then(response =>{
+            this.props.updateTodo(updateId)
+        })
+       
     };
 
     deleteToDo = event => {
-        this.props.deleteTodo(this.props.todo.id)
+
+        delTodo(this.props.todo.id).then(() =>{this.props.deleteTodo(this.props.todo.id)})
+        
 
     }
 }

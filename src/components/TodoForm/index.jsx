@@ -1,5 +1,7 @@
 import React from 'react';
 import {postTodo} from '../../API'
+import { Input, Space} from 'antd';
+import 'antd/dist/antd.css'
 class TodoForm extends React.Component {
 
     constructor(props) {
@@ -11,8 +13,10 @@ class TodoForm extends React.Component {
         return (
 
             <form onSubmit={this.handleSubmit}>
-                <input type="text" value={this.state.content} onChange={this.handleChange}/>
-                <input type="submit" value="Add"/>
+                <Space>
+                <Input type="text" value={this.state.content} onChange={this.handleChange}/>
+                <Input type="submit" value="Add"/>
+                </Space>
             </form>
         )
     }
