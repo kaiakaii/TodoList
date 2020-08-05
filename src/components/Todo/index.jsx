@@ -6,7 +6,7 @@ class Todo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            text: this.props.todo.text
+            text: this.props.todo.content
         }
     }
     render() {
