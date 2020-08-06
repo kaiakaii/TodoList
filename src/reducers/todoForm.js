@@ -1,5 +1,5 @@
 
-const todoForm =(state=[],action)=>{
+const todoForm = (state = [], action) => {
     switch (action.type) {
         case 'TODO_FROM':
             return action.value;

@@ -1,13 +1,13 @@
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import CompletedTodoList from "../../components/CompletedTodoList";
-import {getCompletedTodo} from "../../actions";
+import { getCompletedTodo } from "../../actions";
 
 const mapStateToProps = (state) => {
-   console.log(state)
-   return  {
+    console.log(state)
+    return {
         completedTodo: state.todoList.filter(todo => todo.status)
     }
-    
+
 };
 const mapDispatchToProps = (dispacth) => ({
     getCompletedTodo: () => dispacth(getCompletedTodo())

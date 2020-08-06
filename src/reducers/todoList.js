@@ -3,7 +3,7 @@ const todoList = (state = [], action) => {
         case 'ADD_TODO':
             return [...state, ...action.content]
         case 'UPDATE_TODO':
-            return state.map(todo => todo.id === action.id ? {...todo, status: !todo.status} : todo);
+            return state.map(todo => todo.id === action.id ? { ...todo, status: !todo.status } : todo);
         case 'DELETE_TODO':
             return state.filter(todo => todo.id !== action.id);
         default:

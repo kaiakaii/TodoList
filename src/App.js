@@ -14,12 +14,12 @@ function App() {
             <Row className="todo_body">
                 <Col className="todo-tag" span={8}>
                     <p><Link to="/completedTodoList">CompletedTodoList</Link></p>
-                    
+
                     <p><Link to="/">TodoList</Link></p>
                 </Col>
                 <Col className="todo_body_left" span={16}><Route exact path="/completedTodoList" component={CompletedTodoLContainer}></Route>
                     <Route exact path="/" component={TodoListContainer}></Route>
-                    
+
                 </Col>
             </Row>
             <Row className="todo_foot">
