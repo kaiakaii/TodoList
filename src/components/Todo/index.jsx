@@ -31,13 +31,15 @@ class Todo extends React.Component {
 
 
     hasDoneToDo = event => {
-        if (event.target.style.textDecoration === "line-through") {
-            event.target.style.textDecoration = "none";
-        } else {
-            event.target.style.textDecoration = "line-through"
-        }
         let updateId = this.props.todo.id
-        putTodo(updateId).then(response =>{
+        console.log("sssssssssssss",this.props.todo)
+        let todo = {
+            id: this.props.todo.id,
+            content:this.props.todo.content,
+            status:!this.props.todo.status
+        }
+        putTodo(updateId,todo).then(response =>{
+            console.log(response.data)
             this.props.updateTodo(updateId)
         })
        
