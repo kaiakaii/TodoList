@@ -1,5 +1,7 @@
 const todoList = (state = [], action) => {
     switch (action.type) {
+        case 'INIT':
+            return [...action.content]
         case 'ADD_TODO':
             return [...state, ...action.content]
         case 'UPDATE_TODO':

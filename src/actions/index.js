@@ -27,3 +27,10 @@ export function getCompletedTodo() {
         type: "COMPLETED_TODO"
     }
 }
+
+export function getAllTodo(content){
+    return {
+        type:"INIT",
+        content
+    }
+}

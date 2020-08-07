@@ -8,12 +8,12 @@ class TodoList extends React.Component {
     componentWillMount() {
         getTodos().then(data => {
             console.log(data)
-            this.props.addTodo(data);
+            this.props.getAllTodo(data);
         })
     }
 
     render() {
-        console.log(this.props.todoList);
+        console.log("999999999999999999",this.props.todoList);
         return (
 
             <React.Fragment>
